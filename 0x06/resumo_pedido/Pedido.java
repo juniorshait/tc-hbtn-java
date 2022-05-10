@@ -25,8 +25,8 @@ public class Pedido {
          for (ItemPedido item : itens) {
              String tipoProduto = String.valueOf(item.getProduto().getClass());
              int pos = tipoProduto.indexOf(".");
-             System.out.printf("Tipo: "+ tipoProduto.substring(pos+1)+" Titulo: "+item.getProduto().getTitulo()+
-                     " Preco: %.2f Quant: %d Total: %.2f\n", item.getProduto().obterPrecoLiquido(),item.getQuantidade(),item.getQuantidade()*item.getProduto().obterPrecoLiquido());
+             System.out.printf("Tipo: "+ tipoProduto.substring(pos+1)+"  Titulo: "+item.getProduto().getTitulo()+
+                     "  Preco: %.2f  Quant: %d  Total: %.2f\n", item.getProduto().obterPrecoLiquido(),item.getQuantidade(),item.getQuantidade()*item.getProduto().obterPrecoLiquido());
              total = total + (item.getQuantidade() * item.getProduto().obterPrecoLiquido());
              totalProduto = totalProduto + item.getProduto().obterPrecoLiquido()*item.getQuantidade();
          }
