@@ -35,7 +35,7 @@ public class Empregado {
     }
 
     public void apresentar(){
-        System.out.println("Codigo: "+this.codigo+"" +
+        System.out.println("Codigo: "+this.codigo+
                 "\nNome: "+this.nome+
                 "\nBairro: "+this.endereco.getBairro()+
                 "\nCidade: "+this.endereco.getCidade()+
