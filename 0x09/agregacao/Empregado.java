@@ -35,11 +35,10 @@ public class Empregado {
     }
 
     public void apresentar(){
-        System.out.println("Codigo: "+this.codigo+
-                "\nNome: "+this.nome+
-                "\nBairro: "+this.endereco.getBairro()+
-                "\nCidade: "+this.endereco.getCidade()+
-                "\nPais: "+this.endereco.getPais()
-        );
+        System.out.println("Codigo: "+this.codigo);
+        System.out.println("Nome: "+this.nome);
+        System.out.println("Bairro: "+this.endereco.getBairro());
+        System.out.println("Cidade: "+this.endereco.getCidade());
+        System.out.println("Pais: "+this.endereco.getPais());
     }
 }
