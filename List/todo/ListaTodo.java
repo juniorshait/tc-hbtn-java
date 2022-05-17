@@ -5,7 +5,7 @@ public class ListaTodo {
 
     private ArrayList<Tarefa> tarefas;
     public ListaTodo(){
-        tarefas = new ArrayList<>();
+        tarefas = new ArrayList<Tarefa>();
     }
     public void adicionarTarefa(Tarefa tarefa){
         boolean existe = false;
