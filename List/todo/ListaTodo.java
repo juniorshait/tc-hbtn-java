@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ListaTodo {
 
-    private List<Tarefa> tarefas;
+    private ArrayList<Tarefa> tarefas;
     public ListaTodo(){
         tarefas = new ArrayList<>();
     }
