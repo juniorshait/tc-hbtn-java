@@ -2,7 +2,7 @@ import java.util.*;
 
 public class AnalisadorFrase {
 
-    public static TreeMap contagemPalavras(String frase){
+    public static TreeMap<String,Integer> contagemPalavras(String frase){
         String minuscula = frase.toLowerCase();
         minuscula = minuscula.replaceAll("[!.?]","");
         String[] palavras = minuscula.split(" ");
