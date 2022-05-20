@@ -6,9 +6,8 @@ public class AnalisadorFrase {
         String minuscula = frase.toLowerCase();
         minuscula = minuscula.replaceAll("[!.?]","");
         String[] palavras = minuscula.split(" ");
-        Set<String> chaves = new HashSet<>(List.of(palavras));
         TreeMap<String, Integer> repete = new TreeMap<>();
-        for (String chave: chaves) {
+        for (String chave: palavras) {
             repete.put(chave, Collections.frequency(List.of(palavras),chave));
         }
         return repete;
