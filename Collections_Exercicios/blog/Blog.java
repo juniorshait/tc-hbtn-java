@@ -1,20 +1,21 @@
 import java.util.*;
 public class Blog {
 
-    private ArrayList<Post> posts = new ArrayList<>();
+    private List<Post> posts;
+
+    public Blog(){
+        posts = new ArrayList<Post>();
+    }
+
     public void adicionarPostagem(Post postagem){
         posts.add(postagem);
     }
 
     public Set<String> obterTodosAutores(){
-        LinkedHashSet autores = new LinkedHashSet<>();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i< this.posts.size(); i++) {
-            list.add(posts.get(i).getAutor());
-        }
-        Collections.sort(list);
-        for (int i = 0; i< this.posts.size(); i++) {
-            autores.add(list.get(i));
+        Set<String> autores = new TreeSet<String>();
+        Collections.sort(this.posts);
+        for (Post autor: this.posts) {
+            autores.add(autor.getAutor());
         }
         return autores;
     }
@@ -38,5 +39,4 @@ public class Blog {
         Map<String, Integer> treeMap = new TreeMap<>(category);
         return treeMap;
     }
-
 }
