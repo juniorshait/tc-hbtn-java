@@ -36,7 +36,7 @@ public class Blog {
                 }
             }
         }
-        Map<String, Integer> treeMap = new TreeMap<>(category);
+        Map<String, Integer> treeMap = new TreeMap<String, Integer>(category);
         return treeMap;
     }
 }
