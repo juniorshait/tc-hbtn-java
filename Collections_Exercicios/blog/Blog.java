@@ -1,4 +1,12 @@
 import java.util.*;
+
+class PostByCategory implements Comparator<Post>{
+
+    @Override
+    public int compare(Post o1, Post o2) {
+        return o1.getCategoria().compareTo(o2.getCategoria());
+    }
+}
 public class Blog {
 
     private List<Post> posts;
@@ -20,23 +28,15 @@ public class Blog {
         return autores;
     }
     public Map<String, Integer> obterContagemPorCategoria(){
-        LinkedHashSet categoria = new LinkedHashSet<String>();
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i< this.posts.size(); i++) {
-            categoria.add(this.posts.get(i).getCategoria());
-            list.add(posts.get(i).getCategoria());
-        }
-        Map<String, Integer> category = new HashMap<>();
-        for (int i = 0; i<list.size(); i++){
-            int quantidade = 0;
-            for(int j = 0; j<posts.size(); j++){
-                if(list.get(i).equals(posts.get(j).getCategoria())){
-                    quantidade++;
-                    category.put(list.get(i),quantidade);
-                }
+        Map<String, Integer> category = new TreeMap<String, Integer>();
+        Collections.sort(this.posts, new PostByCategory());
+        for (Post post:this.posts) {
+            if(category.containsKey(post.getCategoria())){
+                category.put(post.getCategoria(), category.get(post.getCategoria())+1);
+            }else{
+                category.put(post.getCategoria(), 1);
             }
         }
-        Map<String, Integer> treeMap = new TreeMap<String, Integer>(category);
-        return treeMap;
+        return category;
     }
 }
