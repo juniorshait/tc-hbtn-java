@@ -46,9 +46,9 @@ public class Blog {
     public Set<Post> obterPostsPorAutor(Autor autor){
         Set<Post> postsAutor = new TreeSet<Post>();
         Collections.sort(this.posts);
-        for (Post author: this.posts) {
-            if(author.getAutor().equals(author.getAutor())){
-                postsAutor.add(author);
+        for (Post post: this.posts) {
+            if(post.getAutor().equals(autor)){
+                postsAutor.add(post);
             }
         }
         return postsAutor;

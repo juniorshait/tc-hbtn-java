@@ -37,15 +37,20 @@ public class Autor implements  Comparable<Autor>{
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Autor autor = (Autor) o;
-        return Objects.equals(nome, autor.nome) && Objects.equals(sobrenome, autor.sobrenome);
+    public boolean equals(Object autorObj) {
+        if (autorObj == null) return false;
+        if (this == autorObj) return true;
+        if (this.getClass() != autorObj.getClass()) return false;
+
+        Autor autor = (Autor) autorObj;
+        return this.getNome() != null
+                && this.getNome().equals(autor.getNome())
+                && this.getSobrenome() != null
+                && this.getSobrenome().equals(autor.getSobrenome());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, sobrenome);
+         return Objects.hash(nome);
     }
 }
