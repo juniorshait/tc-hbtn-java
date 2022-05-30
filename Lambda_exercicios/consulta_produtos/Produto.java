@@ -35,6 +35,6 @@ public class Produto {
 
     @Override
     public String toString(){
-        return this.nome +" "+String.format("%.6f",this.peso)+" "+String.format("%.6f",Double.parseDouble(String.valueOf(this.quantidadeEmEstoque)))+" "+this.tipo;
+        return this.nome +" "+String.format("%.6f",this.preco)+" "+String.format("%.6f",this.peso)+" "+String.format("%.6f",Double.parseDouble(String.valueOf(this.quantidadeEmEstoque)))+" "+this.tipo;
     }
 }
